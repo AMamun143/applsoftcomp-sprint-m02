@@ -6,11 +6,16 @@ This project was completed for the M02 Sprint. To push to your own GitHub repo:
    ```bash
    git remote add myrepo https://github.com/AMamun143/applsoftcomp-sprint-m02.git
    ```
+   Or point `origin` to your repo:
+   ```bash
+   git remote set-url origin https://github.com/AMamun143/applsoftcomp-sprint-m02.git
+   ```
 
 2. Push `master` to your repo:
    ```bash
    git push myrepo master
    ```
+   Or, if you changed origin: `git push origin master`
 
 3. If your repo already has content (e.g., a README), you may need to force-push once:
    ```bash
