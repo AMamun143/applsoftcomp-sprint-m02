@@ -1,35 +1,36 @@
-# Setup: Push to your GitHub repository
+# Setup
 
-This project was completed for the M02 Sprint. To push to your own GitHub repo:
+Notes I used to push this project to my GitHub and to reproduce the figures.
 
-1. Add your repo as a remote (if not already added):
-   ```bash
-   git remote add myrepo https://github.com/AMamun143/applsoftcomp-sprint-m02.git
-   ```
-   Or point `origin` to your repo:
-   ```bash
-   git remote set-url origin https://github.com/AMamun143/applsoftcomp-sprint-m02.git
-   ```
+## Pushing to my repo
 
-2. Push `master` to your repo:
-   ```bash
-   git push myrepo master
-   ```
-   Or, if you changed origin: `git push origin master`
+I added my GitHub repo as a remote and pushed:
 
-3. If your repo already has content (e.g., a README), you may need to force-push once:
-   ```bash
-   git push myrepo master --force
-   ```
-   Use with care.
+```bash
+git remote add myrepo https://github.com/AMamun143/applsoftcomp-sprint-m02.git
+git push myrepo master
+git push myrepo --all
+```
 
-## Reproducing figures
+If I need to point origin at my repo instead:
 
-- **With uv:** Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run `./run.sh`.
-- **With Python venv:** From project root:
+```bash
+git remote set-url origin https://github.com/AMamun143/applsoftcomp-sprint-m02.git
+git push origin master
+git push origin --all
+```
+
+If the remote already had commits (e.g. a README), I used `--force` once: `git push myrepo master --force`. I only do that when I know I'm overwriting the remote.
+
+## Reproducing the figures
+
+I run the pipeline from the project root. Either:
+
+- Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and run `./run.sh`, or
+- Use a venv:
   ```bash
   python3 -m venv .venv
   .venv/bin/pip install pandas matplotlib seaborn scikit-learn
   ./run.sh
   ```
-  The script uses `.venv/bin/python` when `uv` is not available.
+  The script uses `.venv/bin/python` when uv is not installed.
